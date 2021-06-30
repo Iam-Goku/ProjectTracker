@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjectTracker.Models.Employees>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/css/Main.css" rel="stylesheet" />
+
+<div class="profile">
+    <h1>Profile</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PositionID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+            </tr>
+        </thead>
+     
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PositionID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>                   
+                </tr>
+                <tr>
+                    <td>
+                        <a class="btn profilebtn" asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> 
+                        </td>
+                    <td>
+                        <a class="btn profilebtn" asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> 
+                        </td>
+                    <td>
+                        <a class="btn profilebtn" asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

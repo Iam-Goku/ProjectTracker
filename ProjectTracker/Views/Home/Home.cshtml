@@ -1,0 +1,17 @@
+﻿@model ProjectTracker.Models.Projects
+
+@using (Html.BeginForm())
+{
+
+    <button asp-controller="Project" asp-action="ProjectList">Projects</button>
+
+    <button asp-controller="Home" asp-action="EmployeeDetails">Profile</button>
+
+    <button asp-controller="Product" asp-action="ProductList">Product</button>
+
+    <button asp-controller="Customer" asp-action="CustomerList">Customer</button>
+
+
+
+
+}

@@ -1,0 +1,229 @@
+﻿body {
+    font: 13px/20px "Open Sans", Tahoma, Verdana, sans-serif;
+    color: #a7a599;
+    background-image:url('../../Images/PTLogin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.login {
+    position: relative;
+    margin: 100px auto;
+    width: 400px;
+    height: 380px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+    .login h1 {
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+
+.form {
+    width: 100%;
+}
+
+.field {
+    margin: 0px 55px;
+    padding: 20px;
+    outline: none;
+    box-shadow: none;
+}
+
+/*.form .field {
+        position: relative;
+        margin: 0 50px;
+            }*/
+
+ /*.form .field i {
+            font-size: 18px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            height: 44px;
+            width: 44px;
+            color: #f7f3eb;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-left: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            line-height: 44px;
+            transition: all 0.3s ease-out;
+            pointer-events: none;
+ }
+*/
+.login .submit {
+    text-align: center;
+}
+
+.login p:first-child {
+    margin-top: 30px;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+    align-content:center;
+    font-family: "Open Sans";
+}
+
+
+.login input[type=text], input[type=password]{
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px 10px 55px;
+    position: relative;
+    width: 250px;
+    height: 25px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease-out;
+}
+
+input[type=text] {
+    margin-bottom: 15px;
+}
+
+ input[type=submit] {
+    margin-top: 15px;
+    width: 270px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding: 12px 0;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.Signup {
+    position: relative;
+    margin: 40px auto;
+    width: 400px;
+    height:530px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.Signup h1 {
+    line-height: 55px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    margin-top: 0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.Signup .form {
+    width: 100%;
+}
+
+.Signup .field {
+    margin: 0px 55px;
+    padding: 20px;
+    outline: none;
+    box-shadow: none;
+}
+
+.Signup .submit {
+    text-align: center;
+}
+
+.Signup p:first-child {
+    margin-top: 30px;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+    align-content: center;
+    font-family: "Open Sans";
+}
+
+
+.Signup input[type=text], input[type=password], input[type=email] {
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px 10px 55px;
+    position: relative;
+    width: 250px;
+    height: 24px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease-out;
+}
+
+.Signup input[type=text] {
+    margin-bottom: 15px;
+}
+
+.Signup input[type=submit] {
+    margin-top: 15px;
+    width: 270px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding: 12px 0;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 20px;
+}
+

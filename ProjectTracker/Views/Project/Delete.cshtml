@@ -1,0 +1,182 @@
+﻿@model ProjectTracker.Models.Projects
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProjectClass</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SDFRNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SDFRNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RequestFrom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RequestFrom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RequestedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RequestedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReviewedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReviewCompletion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReviewCompletion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOWCreatedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOWCreatedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOWCreatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOWCreatedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOWReviewedBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOWReviewedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOWReviewedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOWReviewedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOWSentYN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOWSentYN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProposalSentYN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProposalSentYN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProposalSentDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProposalSentDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.POReceivedYN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.POReceivedYN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.POReceivedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.POReceivedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.POAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.POAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DeveloperID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeveloperID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DevelopmentStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevelopmentStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DevelopmentEndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevelopmentEndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DevelopmentStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DevelopmentStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectManagerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectManagerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProjectStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProjectStatus)
+        </dd>
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NotesID)
+        </dt>*@
+        @*<dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NotesID)
+        </dd>*@
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProjectID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+    </form>
+</div>

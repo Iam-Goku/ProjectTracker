@@ -1,0 +1,214 @@
+﻿@model IEnumerable<ProjectTracker.Models.Projects>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Projects</h1>
+
+<p>
+    <a asp-action="Create">Create New Project</a>
+</p>
+<div style="overflow-x:auto;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SDFRNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReviewedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReviewCompletion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SOWCreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SOWCreatedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SOWReviewedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SOWReviewedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SOWSentYN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProposalSentYN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProposalSentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.POReceivedYN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.POReceivedDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.POAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeveloperID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DevelopmentStartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DevelopmentEndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DevelopmentStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectManagerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoteID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comments)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SDFRNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customers.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Products.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RequestedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewCompletion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SOWCreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SOWCreatedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SOWReviewedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SOWReviewedOn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SOWSentYN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProposalSentYN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProposalSentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.POReceivedYN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.POReceivedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.POAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employees.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DevelopmentStartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DevelopmentEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DevelopmentStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employees.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.notes.Notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>*@
+                    <td>
+                        @*<a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>*@
+
+
+
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-sm" })
+                        @Html.ActionLink("Details", "Details", new { id = item.ProjectID }, new { @class = "btn btn-success btn-sm" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID }, new { @class = "btn btn-danger btn-sm" })
+
+
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
