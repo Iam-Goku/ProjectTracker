@@ -1,17 +1,17 @@
 ﻿@model ProjectTracker.Models.Projects
 
+    <link href="~/css/Main.css" rel="stylesheet" />
+
 @using (Html.BeginForm())
 {
 
-    <button asp-controller="Project" asp-action="ProjectList">Projects</button>
+    <button class="profilebtn" asp-controller="Project" asp-action="ProjectList">Projects</button>
 
-    <button asp-controller="Home" asp-action="EmployeeDetails">Profile</button>
+    <button class="profilebtn" asp-controller="Home" asp-action="EmployeeDetails">Profile</button>
 
-    <button asp-controller="Product" asp-action="ProductList">Product</button>
+    <button class="profilebtn" asp-controller="Product" asp-action="ProductList">Product</button>
 
-    <button asp-controller="Customer" asp-action="CustomerList">Customer</button>
-
-
+    <button class="profilebtn" asp-controller="Customer" asp-action="CustomerList">Customer</button>
 
 
 }

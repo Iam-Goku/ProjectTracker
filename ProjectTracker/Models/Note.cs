@@ -14,6 +14,7 @@ namespace ProjectTracker.Models
         public int NoteID { get; set; }
         public string Notes { get; set; } 
         public DateTime Date { get; set; }
+        public int ProjectID { get; set; }
         public ICollection<Projects> Projectss { get; set; }
     }
 }

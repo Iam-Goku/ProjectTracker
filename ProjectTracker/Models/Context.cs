@@ -43,21 +43,29 @@ namespace ProjectTracker.Models
 
 
 
-            //    modelBuilder.Entity<Notes>().HasKey(e => new { e.NoteID });
+           // modelBuilder.Entity<Projects>()
+           //.HasRequired(f => f.customers)
+           //.WithMany()
+           //.HasForeignKey(f => f.AwayTeamId)
+           //.WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Project>()
-            //          .HasOne(mg => mg.customers)
-            //          .WithMany(m => m.projects)
-            //          .HasForeignKey(g => g.CustomerID);
+           // modelBuilder.Entity<Fixture>()
+           //     .HasRequired(f => f.HomeTeam)
+           //     .WithMany()
+           //     .HasForeignKey(f => f.HomeTeamId)
+           //     .WillCascadeOnDelete(false);
 
-            // modelBuilder.Entity<Customer>()
-            //.HasMany(a => a.projects)
-            //.WithOne(b => b.customers);
+           // modelBuilder.Entity<Fixture>()
+           //     .HasRequired(f => f.AwayCoach)
+           //     .WithMany()
+           //     .HasForeignKey(f => f.AwayCoachId)
+           //     .WillCascadeOnDelete(false);
 
-
-
-
-            //modelBuilder.Entity<Project>().HasKey(mg => new { mg.CustomerID });
+           // modelBuilder.Entity<Fixture>()
+           //     .HasRequired(f => f.HomeCoach)
+           //     .WithMany()
+           //     .HasForeignKey(f => f.HomeCoachId)
+           //     .WillCascadeOnDelete(false);
 
 
 

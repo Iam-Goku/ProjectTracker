@@ -5,10 +5,18 @@
 }
 <link href="~/css/Main.css" rel="stylesheet" />
 <script src="~/js/Popup.js"></script>
+@using (Html.BeginForm("Attachment", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="upload">
+        <input type="file" name="file" value="Attachment" multiple/>
+        <input id="btnupload" type="submit" value="Upload!" />
+    </div>
+}
 @using (Html.BeginForm())
 {
-<div class="projectcret">
-    <h1> Create</h1>
+
+    <div class="projectcret">
+        <h1> Create</h1>
         @*<div>*@ @*class="row"*@
         <div class="flex">
             @*class="col-md-4"*@
@@ -20,10 +28,10 @@
             </div>
 
             @*<div class="form-group">
-                <label asp-for="SDFRNo" class="control-label"></label>
-                <input asp-for="SDFRNo" class="form-control" />
-                <span asp-validation-for="SDFRNo" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="SDFRNo" class="control-label"></label>
+                    <input asp-for="SDFRNo" class="form-control" />
+                    <span asp-validation-for="SDFRNo" class="text-danger"></span>
+                </div>*@
 
             <div class="form-group">
                 <label asp-for="Customers" class="control-label">Customer</label>
@@ -55,13 +63,13 @@
                 @Html.DropDownList("RequestFrom", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
             @*<div class="form-group">
-                <label asp-for="RequestFrom" class="control-label"></label>
-                <input asp-for="RequestFrom" class="form-control" />
-                <span asp-validation-for="RequestFrom" class="text-danger"></span>
-            </div>*@
-            <div cclass="form-group">
+                    <label asp-for="RequestFrom" class="control-label"></label>
+                    <input asp-for="RequestFrom" class="form-control" />
+                    <span asp-validation-for="RequestFrom" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
                 <label asp-for="RequestedDate" class="control-label"></label>
-                <input asp-for="RequestedDate" class="form-control" />
+                <input type="date" asp-for="RequestedDate" class="form-control" />
                 @*<span asp-validation-for="RequestedDate" class="text-danger"></span>*@
             </div>
 
@@ -70,13 +78,13 @@
                 @Html.DropDownList("ReviewedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
             @*<div class="form-group">
-                <label asp-for="ReviewedBy" class="control-label"></label>
-                <input asp-for="ReviewedBy" class="form-control" />
-                <span asp-validation-for="ReviewedBy" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="ReviewedBy" class="control-label"></label>
+                    <input asp-for="ReviewedBy" class="form-control" />
+                    <span asp-validation-for="ReviewedBy" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="ReviewCompletion" class="control-label"></label>
-                <input asp-for="ReviewCompletion" class="form-control" />
+                <input type="date" asp-for="ReviewCompletion" class="form-control" />
                 @*<span asp-validation-for="ReviewCompletion" class="text-danger"></span>*@
             </div>
 
@@ -85,13 +93,13 @@
                 @Html.DropDownList("SOWCreatedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
             @*<div class="form-group">
-                <label asp-for="SOWCreatedBy" class="control-label"></label>
-                <input asp-for="SOWCreatedBy" class="form-control" />
-                <span asp-validation-for="SOWCreatedBy" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="SOWCreatedBy" class="control-label"></label>
+                    <input asp-for="SOWCreatedBy" class="form-control" />
+                    <span asp-validation-for="SOWCreatedBy" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="SOWCreatedOn" class="control-label"></label>
-                <input asp-for="SOWCreatedOn" class="form-control" />
+                <input type="date" asp-for="SOWCreatedOn" class="form-control" />
                 @*<span asp-validation-for="SOWCreatedOn" class="text-danger"></span>*@
             </div>
 
@@ -100,13 +108,13 @@
                 @Html.DropDownList("SOWReviewedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
             @*<div class="form-group">
-                <label asp-for="SOWReviewedBy" class="control-label"></label>
-                <input asp-for="SOWReviewedBy" class="form-control" />
-                <span asp-validation-for="SOWReviewedBy" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="SOWReviewedBy" class="control-label"></label>
+                    <input asp-for="SOWReviewedBy" class="form-control" />
+                    <span asp-validation-for="SOWReviewedBy" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="SOWReviewedOn" class="control-label"></label>
-                <input asp-for="SOWReviewedOn" class="form-control" />
+                <input type="date" asp-for="SOWReviewedOn" class="form-control" />
                 @*<span asp-validation-for="SOWReviewedOn" class="text-danger"></span>*@
             </div>
             <div class="form-group form-check">
@@ -121,7 +129,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProposalSentDate" class="control-label"></label>
-                <input asp-for="ProposalSentDate" class="form-control" />
+                <input type="date" asp-for="ProposalSentDate" class="form-control" />
                 @*<span asp-validation-for="ProposalSentDate" class="text-danger"></span>*@
             </div>
             <div class="form-group form-check">
@@ -136,7 +144,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="POReceivedDate" class="control-label"></label>
-                <input asp-for="POReceivedDate" class="form-control" />
+                <input type="date" asp-for="POReceivedDate" class="form-control" />
                 @*<span asp-validation-for="POReceivedDate" class="text-danger"></span>*@
             </div>
             <div class="form-group">
@@ -152,12 +160,12 @@
 
             <div class="form-group">
                 <label asp-for="DevelopmentStartDate" class="control-label"></label>
-                <input asp-for="DevelopmentStartDate" class="form-control" />
+                <input type="date" asp-for="DevelopmentStartDate" class="form-control" />
                 @*<span asp-validation-for="DevelopmentStartDate" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="DevelopmentEndDate" class="control-label"></label>
-                <input asp-for="DevelopmentEndDate" class="form-control" />
+                <input type="date" asp-for="DevelopmentEndDate" class="form-control" />
                 @*<span asp-validation-for="DevelopmentEndDate" class="text-danger"></span>*@
             </div>
             <div class="form-group">
@@ -203,27 +211,26 @@
             </div>
 
             @*<div class="form-group">
-                <label asp-for="NotesID" class="control-label"></label>
-                <input asp-for="NotesID" class="form-control" />
-                <span asp-validation-for="NotesID" class="text-danger"></span>
-            </div>*@
+                    <label asp-for="NotesID" class="control-label"></label>
+                    <input asp-for="NotesID" class="form-control" />
+                    <span asp-validation-for="NotesID" class="text-danger"></span>
+                </div>*@
             <div class="form-group">
                 <label asp-for="Comments" class="control-label"></label>
                 <input asp-for="Comments" class="form-control" />
                 @*<span asp-validation-for="Comments" class="text-danger"></span>*@
             </div>
             <div class="form-group">
-
-                <input type="file"  id="fileLoader" name="files" title="Load File" />
-                <input type="image" asp-action="Attachment" asp-controller="Project" src="~/Images/paper-clip.png" id="btnOpenFileDialog" width="30" height="30" ; onclick="openfileDialog();" />
-
-                <input type="submit" value="Create" asp-action="Create" asp-controller="Project" class="btn btn-primary" />
+                <input id="btnsub" type="submit" value="Create" asp-action="Create" asp-controller="Project" class="btn btn-primary" onClick="buttonSubmit();" />
             </div>
             @*</form>*@
             @*</div>*@
         </div>
     </div>
 }
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

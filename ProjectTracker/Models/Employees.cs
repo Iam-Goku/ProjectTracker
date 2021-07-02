@@ -10,7 +10,8 @@ namespace ProjectTracker.Models
     [Table("Employee")]
     public class Employees
     {
-        [Key]
+        // [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmployeeID { get; set; }
         public string Name { get; set; }
         public int PositionID { get; set; }

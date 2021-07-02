@@ -1,0 +1,19 @@
+﻿@model ProjectTracker.Models.Projects
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<form asp-action="Attachment"
+      asp-controller="Project"
+      method="post"
+      enctype="multipart/form-data">
+    <input type="file" id="file1"
+           name="file1"
+           multiple="multiple" />
+    <button asp-action="Attachment" type="submit">Upload File(s)</button>
+</form>
+
+@*<input type="file"  id="fileLoader" name="files" title="Load File" />
+    <input type="image" asp-action="Attachment" asp-controller="Project" src="~/Images/paper-clip.png" id="btnOpenFileDialog" width="30" height="30" ; onclick="openfileDialog();" />*@

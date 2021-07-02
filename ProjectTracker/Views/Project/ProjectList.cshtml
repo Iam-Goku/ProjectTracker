@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 <h1>Projects</h1>
-
+@*<script src="~/js/Popup.js"></script>*@
 <p>
     <a asp-action="Create">Create New Project</a>
 </p>
@@ -31,25 +31,25 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.RequestFrom)
+                    @Html.DisplayNameFor(model => model.Requestfrom)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.RequestedDate)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ReviewedBy)
+                    @Html.DisplayNameFor(model => model.Reviewedby)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ReviewCompletion)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SOWCreatedBy)
+                    @Html.DisplayNameFor(model => model.SOWCreatedby)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.SOWCreatedOn)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SOWReviewedBy)
+                    @Html.DisplayNameFor(model => model.SOWReviewedby)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.SOWReviewedOn)
@@ -73,7 +73,7 @@
                     @Html.DisplayNameFor(model => model.POAmount)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.DeveloperID)
+                    @Html.DisplayNameFor(model => model.DeveloperName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.DevelopmentStartDate)
@@ -85,7 +85,7 @@
                     @Html.DisplayNameFor(model => model.DevelopmentStatus)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ProjectManagerID)
+                    @Html.DisplayNameFor(model => model.ProjectManagerName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ProjectStatus)
@@ -103,7 +103,7 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
+                <tr ondblclick="goToEdit(@item.ProjectID)">
                     <td>
                         @Html.DisplayFor(modelItem => item.Type)
                     </td>
@@ -123,25 +123,25 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.RequestFrom)
+                        @Html.DisplayFor(modelItem => item.Requestfrom)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.RequestedDate)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ReviewedBy)
+                        @Html.DisplayFor(modelItem => item.Reviewedby)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ReviewCompletion)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.SOWCreatedBy)
+                        @Html.DisplayFor(modelItem => item.SOWCreatedby)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SOWCreatedOn)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.SOWReviewedBy)
+                        @Html.DisplayFor(modelItem => item.SOWReviewedby)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SOWReviewedOn)
@@ -177,27 +177,33 @@
                         @Html.DisplayFor(modelItem => item.DevelopmentStatus)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Employees.Name)
+                        @Html.DisplayFor(modelItem => item.ProjectManagerName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ProjectStatus)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.notes.Notes)
+                        @Html.DisplayFor(modelItem => item.NoteID)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Comments)
                     </td>
                     @*<td>
-                            @Html.DisplayFor(modelItem => item.Password)
-                        </td>*@
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>*@
                     <td>
                         @*<a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>*@
+                    <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>*@
 
 
+                        <script>
+                     function goToEdit(s) {
 
+                           location.href = "@Url.Action("Edit", "Project", new {id= "ProjectID" })".replace("ProjectID",s.toString());
+                                          }
+
+                        </script>
 
                         @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-sm" })
                         @Html.ActionLink("Details", "Details", new { id = item.ProjectID }, new { @class = "btn btn-success btn-sm" })

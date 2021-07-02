@@ -8,6 +8,7 @@ namespace ProjectTracker.Models
     public class Attachments
     {
         public int AttachmentID { get; set; }
+        public string ImageTitle { get; set; }
         public byte[] Files { get; set; }
     }
 }

@@ -5,8 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using ProjectTracker.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ProjectTracker.Controllers
 {
@@ -23,24 +26,24 @@ namespace ProjectTracker.Controllers
             int DeveloperID = Convert.ToInt32(HttpContext.Session.GetString("EmployeeID"));
             if (DeveloperID >= 1)
             {
-                //var myUser = _context.Projects.Where(e => e.DeveloperID == DeveloperID);
-                // var myUser = _context.project.Include(cu => cu.customers).ToList();
-
-                var myUser = _context.Project.Include(ap => ap.Types).Include(ap => ap.Customers)
-               .Include(ap => ap.Products).Include(ap => ap.Employees).Include(ap => ap.Employees)
-               .Include(ap => ap.notes).ToList();
-
-                //var myUser = _context.Projects
-                //             .Include(c => c.Customer)
-                //             .Include(c => c.Products)
-                //             .Include(c => c.Employees)
-                //             //.Include(c=>c.Manager)
-                //             .Include(c => c.Types)
-                //             .ToList();
-
-
-
-
+      
+                var myUser = _context.Project
+                    .Include(ap => ap.Types)
+                    .Include(ap => ap.Customers)
+                    .Include(ap => ap.Products)
+                    //.Include(ap => ap.Employees)
+                    .Include(ap => ap.notes)
+                    .ToList();
+                var emp = _context.Employee.ToList();
+                foreach(var item in myUser)
+                    {
+                    item.Requestfrom = emp.Where(e => e.EmployeeID == item.RequestFrom).Select(f => f.Name).FirstOrDefault();
+                    item.Reviewedby = emp.Where(e => e.EmployeeID == item.ReviewedBy).Select(f => f.Name).FirstOrDefault();
+                    item.SOWCreatedby = emp.Where(e => e.EmployeeID == item.SOWCreatedBy).Select(f => f.Name).FirstOrDefault();
+                    item.SOWReviewedby = emp.Where(e => e.EmployeeID == item.SOWCreatedBy).Select(f => f.Name).FirstOrDefault();
+                    item.DeveloperName = emp.Where(e => e.EmployeeID == item.DeveloperID).Select(f=>f.Name).FirstOrDefault();
+                    item.ProjectManagerName = emp.Where(e => e.EmployeeID == item.ProjectManagerID).Select(f => f.Name).FirstOrDefault();
+                    }
                 return View(myUser);
             }
             else
@@ -194,18 +197,54 @@ namespace ProjectTracker.Controllers
         [HttpPost]
         public IActionResult Popup(Note not)
         {
+           
+
             _context.Add(not);
             _context.SaveChangesAsync();
             
             return View("Close");
           
         }
+        //public IActionResult SaveNote(Note nt)
+        //{
+        //   // item.Requestfrom = emp.Where(e => e.EmployeeID == item.RequestFrom).Select(f => f.Name).FirstOrDefault();
 
-        public IActionResult Attachment(Attachments ath)
+        //    var nts = _context.Notes.Where(e=>e.ProjectID==0).ToList();
+        //    int project = _context.Project.Max(u => u.ProjectID);
+
+        //    //if(!_context.Notes.Any())
+        //    foreach (var not in nts)
+        //    {
+        //        nt.ProjectID = project;
+        //        //_context.Add(project);
+        //        _context.Update(nt);
+        //        _context.SaveChangesAsync();
+        //    }
+        //    return RedirectToAction("ProjectList");
+        //}
+
+
+
+            public IActionResult Attachment(Attachments ath)
         {
-            _context.Add(ath);
-            _context.SaveChanges();
-            return View();
+            foreach (var file in Request.Form.Files)
+            {
+                Attachments img = new Attachments();
+                img.ImageTitle = file.FileName;
+
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                img.Files = ms.ToArray();
+
+                ms.Close();
+                ms.Dispose();
+
+                _context.Attachment.Add(img);
+                _context.SaveChanges();
+            }           
+            return RedirectToAction("ProjectList");
+
+
         }
     }
 }
