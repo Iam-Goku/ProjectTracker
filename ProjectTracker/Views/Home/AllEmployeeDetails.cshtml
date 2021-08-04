@@ -5,8 +5,9 @@
 }
 <link href="~/css/Main.css" rel="stylesheet" />
 
-<div class="profile">
-    <h1>Profile</h1>
+<div>
+    <center><h1>All Employees</h1></center>
+    <a class="btn profilebtn" asp-controller="Home" asp-action="SignUp">Add Employee</a>
 
     <table class="table">
         <thead>
@@ -15,7 +16,7 @@
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PositionID)
+                    @Html.DisplayNameFor(model => model.postion.Position)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Phone)
@@ -23,12 +24,10 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Mail)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Password)
-                </th>
+
             </tr>
         </thead>
-     
+
         <tbody>
             @foreach (var item in Model)
             {
@@ -37,7 +36,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.PositionID)
+                        @Html.DisplayFor(modelItem => item.postion.Position)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Phone)
@@ -45,18 +44,10 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Mail)
                     </td>
+
                     <td>
-                        @Html.DisplayFor(modelItem => item.Password)
-                    </td>                   
-                </tr>
-                <tr>
-                    <td>
-                        <a class="btn profilebtn" asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> 
-                        </td>
-                    <td>
-                        <a class="btn profilebtn" asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> 
-                        </td>
-                    <td>
+                        <a class="btn profilebtn" asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a>
+
                         <a class="btn profilebtn" asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
                     </td>
                 </tr>

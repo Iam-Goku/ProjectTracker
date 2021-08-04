@@ -3,14 +3,14 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link href="~/css/Main.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="CustomerEdit">
+        <h1>Edit</h1>
 
-<h1>Edit</h1>
-
-<h4>Customer</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+        <div class="flex">
+            @*<form asp-action="Edit">*@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CustomerID" />
             <div class="form-group">
@@ -46,13 +46,13 @@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-        </form>
+            @*</form>*@
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <input type="button" value="back" class="btn btn-primary custpos" onClick="history.go(-1)" />
+    </div>
+}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

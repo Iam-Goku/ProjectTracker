@@ -1,19 +1,72 @@
-﻿@model ProjectTracker.Models.Projects
-
+﻿@model IEnumerable<ProjectTracker.Models.Attachments>
 @{
-    ViewData["Title"] = "Create";
+    Layout = "";
+}
+@{
+    ViewData["Title"] = "Attachment";
 }
 
+<div style="overflow-x:auto;">
+    <table id="table" class="table" style="width: 80%;" border="1" cellpadding="3">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttachmentID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageTitle)
+                </th>
 
-<form asp-action="Attachment"
-      asp-controller="Project"
-      method="post"
-      enctype="multipart/form-data">
-    <input type="file" id="file1"
-           name="file1"
-           multiple="multiple" />
-    <button asp-action="Attachment" type="submit">Upload File(s)</button>
-</form>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttachmentID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImageTitle)
+                    </td>
 
-@*<input type="file"  id="fileLoader" name="files" title="Load File" />
-    <input type="image" asp-action="Attachment" asp-controller="Project" src="~/Images/paper-clip.png" id="btnOpenFileDialog" width="30" height="30" ; onclick="openfileDialog();" />*@
+                    <td>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+<br />
+@using (Html.BeginForm("AttachmentAdd", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="ProjectID" value="@ViewBag.AttachProjectID" />
+    <input type="file" id="file1" name="file1" multiple="multiple" />
+    <button type="submit" formaction="/Project/AttachmentAdd">Upload File(s)</button>
+
+}
+@using (Html.BeginForm("DownloadFile", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div>
+    <input type="hidden" id="id" name="id" />
+    <input type="text" id="filename" name="filename" />
+    <button type="submit" formaction="/Project/ViewFile">Open</button>
+    <button type="submit" id="btnDownload" formaction="/Project/DownloadFile">Download</button>
+</div>
+}
+    <script>
+
+        var table = document.getElementById('table');
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].onclick = function () {
+                document.getElementById("id").value = this.cells[0].innerHTML.trim();
+                document.getElementById("filename").value = this.cells[1].innerHTML.trim();
+            };
+        }
+
+    </script>
+  
+    @*<input type="file"  id="fileLoader" name="files" title="Load File" />
+        <input type="image" asp-action="Attachment" asp-controller="Project" src="~/Images/paper-clip.png" id="btnOpenFileDialog" width="30" height="30" ; onclick="openfileDialog();" />*@

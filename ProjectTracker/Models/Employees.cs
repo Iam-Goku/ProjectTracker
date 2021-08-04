@@ -20,5 +20,7 @@ namespace ProjectTracker.Models
         public string Password { get; set; }
         //[ForeignKey("EmployeeID")]
         public ICollection<Projects> Projectss { get; set; }
+        [ForeignKey("PositionID")]
+        public Positions postion { get; set; }
     }
 }

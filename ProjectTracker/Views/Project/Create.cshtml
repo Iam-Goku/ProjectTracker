@@ -4,15 +4,24 @@
     ViewData["Title"] = "Create";
 }
 <link href="~/css/Main.css" rel="stylesheet" />
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
 <script src="~/js/Popup.js"></script>
-@using (Html.BeginForm("Attachment", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div class="upload">
-        <input type="file" name="file" value="Attachment" multiple/>
-        <input id="btnupload" type="submit" value="Upload!" />
-    </div>
-}
-@using (Html.BeginForm())
+@*@using (Html.BeginForm("Attachment", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="upload">
+            <input type="file" name="file" value="Attachment" multiple/>
+            <input id="btnupload" type="submit" value="Upload!" />
+        </div>
+    }*@
+@using (Html.BeginForm("Create", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     <div class="projectcret">
@@ -23,29 +32,20 @@
             @*<form asp-action="Create">*@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Types" class="control-label">Type</label>
+                <label asp-for="TypeID" class="control-label">Type</label>
                 @Html.DropDownList("TypeID", (IEnumerable<SelectListItem>)ViewBag.TypeID, null, new { @class = "form-control" })
             </div>
 
-            @*<div class="form-group">
-                    <label asp-for="SDFRNo" class="control-label"></label>
-                    <input asp-for="SDFRNo" class="form-control" />
-                    <span asp-validation-for="SDFRNo" class="text-danger"></span>
-                </div>*@
-
             <div class="form-group">
-                <label asp-for="Customers" class="control-label">Customer</label>
+                <label asp-for="CustomerID" class="control-label">Customer</label>
                 @Html.DropDownList("CustomerID", (IEnumerable<SelectListItem>)ViewBag.CustomerID, null, new { @class = "form-control" })
             </div>
 
             <div class="form-group">
-                <label asp-for="Products" class="control-label">Product</label>
+                <label asp-for="ProductID" class="control-label">Product</label>
                 @Html.DropDownList("ProductID", (IEnumerable<SelectListItem>)ViewBag.ProductID, null, new { @class = "form-control" })
 
-
             </div>
-
-
 
             <div class="form-group">
                 <label asp-for="ProjectName" class="control-label"></label>
@@ -62,11 +62,7 @@
                 <label asp-for="RequestFrom" class="control-label">Request From</label>
                 @Html.DropDownList("RequestFrom", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
-            @*<div class="form-group">
-                    <label asp-for="RequestFrom" class="control-label"></label>
-                    <input asp-for="RequestFrom" class="form-control" />
-                    <span asp-validation-for="RequestFrom" class="text-danger"></span>
-                </div>*@
+
             <div class="form-group">
                 <label asp-for="RequestedDate" class="control-label"></label>
                 <input type="date" asp-for="RequestedDate" class="form-control" />
@@ -77,11 +73,7 @@
                 <label asp-for="ReviewedBy" class="control-label">Reviewed By</label>
                 @Html.DropDownList("ReviewedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
-            @*<div class="form-group">
-                    <label asp-for="ReviewedBy" class="control-label"></label>
-                    <input asp-for="ReviewedBy" class="form-control" />
-                    <span asp-validation-for="ReviewedBy" class="text-danger"></span>
-                </div>*@
+
             <div class="form-group">
                 <label asp-for="ReviewCompletion" class="control-label"></label>
                 <input type="date" asp-for="ReviewCompletion" class="form-control" />
@@ -92,11 +84,7 @@
                 <label asp-for="SOWCreatedBy" class="control-label">SOW Created By</label>
                 @Html.DropDownList("SOWCreatedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
-            @*<div class="form-group">
-                    <label asp-for="SOWCreatedBy" class="control-label"></label>
-                    <input asp-for="SOWCreatedBy" class="form-control" />
-                    <span asp-validation-for="SOWCreatedBy" class="text-danger"></span>
-                </div>*@
+
             <div class="form-group">
                 <label asp-for="SOWCreatedOn" class="control-label"></label>
                 <input type="date" asp-for="SOWCreatedOn" class="form-control" />
@@ -107,41 +95,58 @@
                 <label asp-for="SOWReviewedBy" class="control-label">SOW Reviewed By</label>
                 @Html.DropDownList("SOWReviewedBy", (IEnumerable<SelectListItem>)ViewBag.AllEmployee, null, new { @class = "form-control" })
             </div>
-            @*<div class="form-group">
-                    <label asp-for="SOWReviewedBy" class="control-label"></label>
-                    <input asp-for="SOWReviewedBy" class="form-control" />
-                    <span asp-validation-for="SOWReviewedBy" class="text-danger"></span>
-                </div>*@
+
             <div class="form-group">
                 <label asp-for="SOWReviewedOn" class="control-label"></label>
                 <input type="date" asp-for="SOWReviewedOn" class="form-control" />
                 @*<span asp-validation-for="SOWReviewedOn" class="text-danger"></span>*@
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="SOWSentYN" /> @Html.DisplayNameFor(model => model.SOWSentYN)
-                </label>
+            <div class="form-group">
+                <label asp-for="SOWSentYN" class="control-label">SOW Sent</label>
+                @Html.DropDownListFor(model => model.SOWSentYN, new List<SelectListItem>()
+                {
+                   new SelectListItem() { Text = "Yes", Value = "True" },
+                   new SelectListItem() { Text = "No", Value = "False"}
+                }, "Select.....", new { @id = "SOWSentYN", @class = "form-control" })
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ProposalSentYN" /> @Html.DisplayNameFor(model => model.ProposalSentYN)
-                </label>
+
+            <div class="form-group">
+                <label asp-for="ProposalSentYN" class="control-label">Proposal Sent</label>
+                @Html.DropDownListFor(model => model.ProposalSentYN, new List<SelectListItem>()
+                {
+                   new SelectListItem() { Text = "Yes", Value = "True" },
+                   new SelectListItem() { Text = "No", Value = "False"}
+                }, "Select.....", new { @id = "ProposalSentYN", @class = "form-control" })
             </div>
+
             <div class="form-group">
                 <label asp-for="ProposalSentDate" class="control-label"></label>
                 <input type="date" asp-for="ProposalSentDate" class="form-control" />
                 @*<span asp-validation-for="ProposalSentDate" class="text-danger"></span>*@
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="POReceivedYN" /> @Html.DisplayNameFor(model => model.POReceivedYN)
-                </label>
+
+            <div class="form-group">
+                <label asp-for="POReceivedYN" class="control-label">PO Received</label>
+                @Html.DropDownListFor(model => model.POReceivedYN, new List<SelectListItem>()
+                {
+                   new SelectListItem() { Text = "Yes", Value = "True" },
+                   new SelectListItem() { Text = "No", Value = "False"}
+                }, "Select.....", new { @id = "POReceivedYN", @class = "form-control" })
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="InvoiceYN" /> @Html.DisplayNameFor(model => model.InvoiceYN)
-                </label>
+
+            <div class="form-group">
+                <label asp-for="InvoiceYN" class="control-label">Invoice Sent</label>
+                @Html.DropDownListFor(model => model.InvoiceYN, new List<SelectListItem>()
+                {
+                   new SelectListItem() { Text = "Yes", Value = "True" },
+                   new SelectListItem() { Text = "No", Value = "False"}
+                }, "Select.....", new { @id = "InvoiceYN", @class = "form-control" })
             </div>
+            @*<div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="InvoiceYN" /> @Html.DisplayNameFor(model => model.InvoiceYN)
+                    </label>
+                </div>*@
             <div class="form-group">
                 <label asp-for="POReceivedDate" class="control-label"></label>
                 <input type="date" asp-for="POReceivedDate" class="form-control" />
@@ -168,70 +173,111 @@
                 <input type="date" asp-for="DevelopmentEndDate" class="form-control" />
                 @*<span asp-validation-for="DevelopmentEndDate" class="text-danger"></span>*@
             </div>
-            <div class="form-group">
-                <label asp-for="DevelopmentStatus" class="control-label"></label>
-                <select asp-for="DevelopmentStatus" class="form-control">
-                    <option value=”10%”>10%</option>
-                    <option value=”20%”>20%</option>
-                    <option value=”30%”>30%</option>
-                    <option value=”40%”>40%</option>
-                    <option value=”50%”>50%</option>
-                    <option value=”60%”>60%</option>
-                    <option value=”70%”>70%</option>
-                    <option value=”80%”>80%</option>
-                    <option value=”90%”>90%</option>
-                    <option value=”100%”>100%</option>
-                </select>
+
+            <div class="dropdown drop">
+                <button class="btn  dropdown-toggle"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false">
+                    STATUS
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            ProjectStatus &raquo;
+                        </a>
+                        <ul class="dropdown-menu dropdown-submenu">
+                            @foreach (var i in ViewBag.ProjectStatus)
+                            {
+                                <li>
+                                    @*<a id="ProjectStatus" class="dropdown-item" href="#">@i.Text</a>*@
+                                    <a class="dropdown-item" href='#' onclick='return change("@i.Text",this,"ProjectStatus")'>@i.Text</a>
+
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            DevelopmentStatus &raquo;
+                        </a>
+                        <ul class="dropdown-menu dropdown-submenu">
+                            @foreach (var i in ViewBag.DevelopmentStatus)
+                            {
+                                <li>
+                                    @*<a class="dropdown-item" href="#">@i.Text</a>*@
+                                    <a class="dropdown-item" href='#' onclick='return change("@i.Text",this,"DevelopmentStatus")'>@i.Text</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
             </div>
+
+            <input id="ProjectStatus" name="ProjectStatus" hidden />
+            <input id="DevelopmentStatus" name="DevelopmentStatus" hidden />
+
+
 
             <div class="form-group">
                 <label asp-for="Employees" class="control-label">Project Manager</label>
                 @Html.DropDownList("ProjectManagerID", (IEnumerable<SelectListItem>)ViewBag.Manager, null, new { @class = "form-control" })
             </div>
 
-            <div class="form-group">
-                <label asp-for="ProjectStatus" class="control-label"></label>
-                <select asp-for="ProjectStatus" class="form-control">
-                    <option value=”10%”>10%</option>
-                    <option value=”20%”>20%</option>
-                    <option value=”30%”>30%</option>
-                    <option value=”40%”>40%</option>
-                    <option value=”50%”>50%</option>
-                    <option value=”60%”>60%</option>
-                    <option value=”70%”>70%</option>
-                    <option value=”80%”>80%</option>
-                    <option value=”90%”>90%</option>
-                    <option value=”100%”>100%</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Notes</label>
-                <input class="form-control" type="button" id="btnpopup" value="Notes" onclick="ShowModelPopUp();" />
-                <span class="text-danger"></span>
-            </div>
 
-            @*<div class="form-group">
-                    <label asp-for="NotesID" class="control-label"></label>
-                    <input asp-for="NotesID" class="form-control" />
-                    <span asp-validation-for="NotesID" class="text-danger"></span>
-                </div>*@
             <div class="form-group">
                 <label asp-for="Comments" class="control-label"></label>
                 <input asp-for="Comments" class="form-control" />
                 @*<span asp-validation-for="Comments" class="text-danger"></span>*@
             </div>
+
             <div class="form-group">
-                <input id="btnsub" type="submit" value="Create" asp-action="Create" asp-controller="Project" class="btn btn-primary" onClick="buttonSubmit();" />
+                <label class="control-label">Notes</label>
+                <input asp-for="Notecreate" class="form-control" style="height:30px">
+                <span class="text-danger"></span>
             </div>
-            @*</form>*@
-            @*</div>*@
+            <!--<div class="form-group">
+            <label class="control-label">Notes</label>-->
+            @*<input class="form-control" type="button" id="btnpopup" value="Notes" onclick="ShowModelPopUp();" />*@
+            <!--<span class="text-danger"></span>
+            </div>-->
+
+            <div class="form-group">
+                <input type="file" name="file" id="file" multiple="multiple" />
+            </div>
+
+
         </div>
+
+        <div class="form-group">
+            <input id="btnsub" type="submit" value="Create" asp-action="Create" asp-controller="Project" class="btn btn-primary" />
+            <input type="button" value="Create" onclick="submitCreate();" />
+        </div>
+        @*</form>*@
+        @*</div>*@
     </div>
+    <script>
+        function change(text, t, type) {
+            $("li").css("background", "transparent");
+            if (type == "ProjectStatus") {
+                $("#ProjectStatus").val(text);
+                $("#DevelopmentStatus").val();
+            } else {
+                $("#DevelopmentStatus").val(text);
+                $("#ProjectStatus").val();
+            }
+            $(t).parent().css("background", "#1266f1");
+            return false;
+        }
+    </script>
 }
-
-
-
+<div class="projback">
+    <input type="button" value="back" class="btn btn-primary projectpos" onClick="history.go(-1)" />
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

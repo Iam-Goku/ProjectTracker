@@ -3,163 +3,186 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link href="~/css/Main.css" rel="stylesheet" />
+<script src="~/js/Popup.js"></script>
 
-<h1>Edit</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProjectID" />
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SDFRNo" class="control-label"></label>
-                <input asp-for="SDFRNo" class="form-control" />
-                <span asp-validation-for="SDFRNo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerID" class="control-label"></label>
-                <input asp-for="CustomerID" class="form-control" />
-                <span asp-validation-for="CustomerID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductID" class="control-label"></label>
-                <input asp-for="ProductID" class="form-control" />
-                <span asp-validation-for="ProductID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectName" class="control-label"></label>
-                <input asp-for="ProjectName" class="form-control" />
-                <span asp-validation-for="ProjectName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RequestFrom" class="control-label"></label>
-                <input asp-for="RequestFrom" class="form-control" />
-                <span asp-validation-for="RequestFrom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RequestedDate" class="control-label"></label>
-                <input asp-for="RequestedDate" class="form-control" />
-                <span asp-validation-for="RequestedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReviewedBy" class="control-label"></label>
-                <input asp-for="ReviewedBy" class="form-control" />
-                <span asp-validation-for="ReviewedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReviewCompletion" class="control-label"></label>
-                <input asp-for="ReviewCompletion" class="form-control" />
-                <span asp-validation-for="ReviewCompletion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SOWCreatedBy" class="control-label"></label>
-                <input asp-for="SOWCreatedBy" class="form-control" />
-                <span asp-validation-for="SOWCreatedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SOWCreatedOn" class="control-label"></label>
-                <input asp-for="SOWCreatedOn" class="form-control" />
-                <span asp-validation-for="SOWCreatedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SOWReviewedBy" class="control-label"></label>
-                <input asp-for="SOWReviewedBy" class="form-control" />
-                <span asp-validation-for="SOWReviewedBy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SOWReviewedOn" class="control-label"></label>
-                <input asp-for="SOWReviewedOn" class="form-control" />
-                <span asp-validation-for="SOWReviewedOn" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="SOWSentYN" /> @Html.DisplayNameFor(model => model.SOWSentYN)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ProposalSentYN" /> @Html.DisplayNameFor(model => model.ProposalSentYN)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProposalSentDate" class="control-label"></label>
-                <input asp-for="ProposalSentDate" class="form-control" />
-                <span asp-validation-for="ProposalSentDate" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="POReceivedYN" /> @Html.DisplayNameFor(model => model.POReceivedYN)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="POReceivedDate" class="control-label"></label>
-                <input asp-for="POReceivedDate" class="form-control" />
-                <span asp-validation-for="POReceivedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="POAmount" class="control-label"></label>
-                <input asp-for="POAmount" class="form-control" />
-                <span asp-validation-for="POAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeveloperID" class="control-label"></label>
-                <input asp-for="DeveloperID" class="form-control" />
-                <span asp-validation-for="DeveloperID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DevelopmentStartDate" class="control-label"></label>
-                <input asp-for="DevelopmentStartDate" class="form-control" />
-                <span asp-validation-for="DevelopmentStartDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DevelopmentEndDate" class="control-label"></label>
-                <input asp-for="DevelopmentEndDate" class="form-control" />
-                <span asp-validation-for="DevelopmentEndDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DevelopmentStatus" class="control-label"></label>
-                <input asp-for="DevelopmentStatus" class="form-control" />
-                <span asp-validation-for="DevelopmentStatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectManagerID" class="control-label"></label>
-                <input asp-for="ProjectManagerID" class="form-control" />
-                <span asp-validation-for="ProjectManagerID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectStatus" class="control-label"></label>
-                <input asp-for="ProjectStatus" class="form-control" />
-                <span asp-validation-for="ProjectStatus" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
-                <label asp-for="NotesID" class="control-label"></label>
-                <input asp-for="NotesID" class="form-control" />
-                <span asp-validation-for="NotesID" class="text-danger"></span>
-            </div>*@
+@using (Html.BeginForm())
+{
+<div class="projectedit">
+    <h1>Edit</h1>
+    <div class="flex">
+        @*<form asp-action="Edit">*@
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ProjectID" />
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary" />
-            @*<button name="X-HTTP-Method-Override" value="DELETE">Delete</button>*@
-            @Html.ActionLink("Delete", "Delete", new { id = Model.ProjectID }, new { @class = "btn btn-danger btn-sm" })
-
+            <label asp-for="Types" class="control-label">Type</label>
+            @Html.DropDownList("Type", (IEnumerable<SelectListItem>)ViewBag.TypeID, null, new { @class = "form-control" })
         </div>
-        </form>
+        <div class="form-group">
+            <label asp-for="CustomerID" class="control-label">Customer</label>
+            @Html.DropDownList("CustomerName", (IEnumerable<SelectListItem>)ViewBag.CustomerID, null, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="ProjectID" class="control-label">Product</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.ProductID, null, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="ProjectName" class="control-label"></label>
+            <input asp-for="ProjectName" class="form-control" />
+            <span asp-validation-for="ProjectName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Requestfrom" class="control-label">Request From</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.RequestFrom, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RequestedDate" class="control-label"></label>
+            <input asp-for="RequestedDate" class="form-control" />
+            <span asp-validation-for="RequestedDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ReviewedBy" class="control-label">Reviewed By</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.ReviewedBy, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ReviewCompletion" class="control-label"></label>
+            <input asp-for="ReviewCompletion" class="form-control" />
+            <span asp-validation-for="ReviewCompletion" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SOWCreatedBy" class="control-label">SOWCreated By</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.SOWCreatedBy, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SOWCreatedOn" class="control-label"></label>
+            <input asp-for="SOWCreatedOn" class="form-control" />
+            <span asp-validation-for="SOWCreatedOn" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SOWReviewedBy" class="control-label">SOWReviewed By</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.SOWReviewedBy, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SOWReviewedOn" class="control-label"></label>
+            <input asp-for="SOWReviewedOn" class="form-control" />
+            <span asp-validation-for="SOWReviewedOn" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SOWSentYN" class="control-label">SOW Sent</label>
+            @Html.DropDownListFor(model => model.SOWSentYN, new List<SelectListItem>()
+            {
+               new SelectListItem() { Text = "Yes", Value = "True" },
+               new SelectListItem() { Text = "No", Value = "False"}
+            }, null, new { @id = "SOWSentYN", @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ProposalSentYN" class="control-label">Proposal Sent</label>
+            @Html.DropDownListFor(model => model.ProposalSentYN, new List<SelectListItem>()
+            {
+               new SelectListItem() { Text = "Yes", Value = "True" },
+               new SelectListItem() { Text = "No", Value = "False"}
+            }, "Select.....", new { @id = "ProposalSentYN", @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="ProposalSentDate" class="control-label"></label>
+            <input asp-for="ProposalSentDate" class="form-control" />
+            <span asp-validation-for="ProposalSentDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="POReceivedYN" class="control-label">PO Received</label>
+            @Html.DropDownListFor(model => model.POReceivedYN, new List<SelectListItem>()
+            {
+               new SelectListItem() { Text = "Yes", Value = "True" },
+               new SelectListItem() { Text = "No", Value = "False"}
+            }, "Select.....", new { @id = "POReceivedYN", @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="InvoiceYN" class="control-label">Invoice Sent</label>
+            @Html.DropDownListFor(model => model.InvoiceYN, new List<SelectListItem>()
+            {
+               new SelectListItem() { Text = "Yes", Value = "True" },
+               new SelectListItem() { Text = "No", Value = "False"}
+            }, "Select.....", new { @id = "InvoiceYN", @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="POReceivedDate" class="control-label"></label>
+            <input asp-for="POReceivedDate" class="form-control" />
+            <span asp-validation-for="POReceivedDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="POAmount" class="control-label"></label>
+            <input asp-for="POAmount" class="form-control" />
+            <span asp-validation-for="POAmount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DeveloperID" class="control-label">Developer</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.DeveloperID, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DevelopmentStartDate" class="control-label"></label>
+            <input asp-for="DevelopmentStartDate" class="form-control" />
+            <span asp-validation-for="DevelopmentStartDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DevelopmentEndDate" class="control-label"></label>
+            <input asp-for="DevelopmentEndDate" class="form-control" />
+            <span asp-validation-for="DevelopmentEndDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DevelopmentStatus" class="control-label"></label>
+            <input asp-for="DevelopmentStatus" class="form-control" />
+            <span asp-validation-for="DevelopmentStatus" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ProjectManagerID" class="control-label">Project Manager</label>
+            @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.ProjectManagerID, null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ProjectStatus" class="control-label"></label>
+            <input asp-for="ProjectStatus" class="form-control" />
+            <span asp-validation-for="ProjectStatus" class="text-danger"></span>
+        </div>
+  
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="form-group">
+        <input type="button" id="Attachmentbtn" value="Attachment" class="btn btn-primary" onclick="Attachments();" />
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <input type="button" id="notebutton" value="Notes" class="btn btn-primary" onclick="NoteList();" />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ProjectID }, new { @class = "btn btn-danger btn-sm btndelte" })
+
+        @*<div class="form-group">*@
+        @*<span class="text-danger"></span>*@
+        @*</div>*@
+    </div>
+    @*</form>*@
+</div>
 }
+
+
+<div class="projback">
+    <input type="button" value="back" class="btn btn-primary projectpos" onClick="history.go(-1)" />
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

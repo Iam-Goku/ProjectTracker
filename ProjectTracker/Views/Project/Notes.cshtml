@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ProjectTracker.Models.Note>
+@{
+    Layout = "";
+}
+@{
+    ViewData["Title"] = "Notes";
+}
+<link href="~/css/Sub.css" rel="stylesheet" />
+<script src="~/js/Popup.js"></script>
+<div style="overflow-x:auto;">
+    <table id="table" class="table" style="width: 80%;" border="1" cellpadding="3">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoteID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoteID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Notes)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+<br />
+@using (Html.BeginForm())
+{
+<div>
+    <div>
+        <input type="hidden" name="id" id="id" />
+        <input class="txt" type="datetime" id="Date" value="@ViewBag.DATE" name="Date" style="width: 80%;" />
+    </div>
+    <div>
+        <textarea class="scrollabletextbox txtare" id="Notes" name="Notes" style="width: 80%; height:30%;"></textarea>
+    </div>
+</div><br/>
+    <script>
+
+        var table = document.getElementById('table');
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].onclick = function () {
+                document.getElementById("id").value = this.cells[0].innerHTML;
+                document.getElementById("Date").value = this.cells[1].innerHTML;
+                document.getElementById("Notes").value = this.cells[2].innerHTML.trim();
+
+            };
+        }
+
+    </script>
+    <div>
+        <input type="submit" value="Update" formaction='/Project/NoteEdit' />
+        <input type="submit" value="Add" formaction='/Project/Popup' />
+        <input type="submit" value="Delete" formaction='/Project/NoteDelete' />
+    </div>
+
+}
+
+

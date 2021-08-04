@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PositionID" class="control-label"></label>
-                <input asp-for="PositionID" class="form-control" />
+                    @Html.DropDownList("PositionID", (IEnumerable<SelectListItem>)ViewBag.PositionID, null, new { @class = "form-control dropdownlist" })             
                 <span asp-validation-for="PositionID" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,6 +38,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="button" value="back" class="btn btn-primary" onClick="history.go(-1)"/>
             </div>
         </form>
     </div>

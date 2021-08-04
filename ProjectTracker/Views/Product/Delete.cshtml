@@ -22,6 +22,7 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="ProductID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="button" value="back" class="btn btn-primary custpos" onClick="history.go(-1)" />
+
     </form>
 </div>

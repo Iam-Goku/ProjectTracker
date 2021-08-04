@@ -9,13 +9,18 @@
 {
 
     <div class="Signup">
-        <h1>Sign Up</h1>
+        <h1>Add Employee</h1>
         <form class="form" method="post" action="SignUp">
             <p class="field">
                 <input type="text" name="Name" placeholder="Name" required />
             </p>
-            <p class="field">
-                <input type="text" name="Position" placeholder="Position" required />
+            @*<p class="field">
+            <input type="text" name="Position" placeholder="Position" required />
+        </p>*@
+            <p class="field ">
+                @Html.DropDownList("PositionID", (IEnumerable<SelectListItem>)ViewBag.PositionID, null, new { @class = "form-control dropdownlist" })
+
+                @*<input type="text" name="Position" placeholder="Position" required />*@
             </p>
             <p class="field">
                 <input type="text" name="Phone" placeholder="Phone" required />
@@ -26,9 +31,12 @@
             <p class="field">
                 <input type="password" name="Password" placeholder="Password" required />
             </p>
-            <p class="submit"><input type="submit" name="sent" value="Sign Up"></p>
+            <p class="submit"><input type="submit" name="sent" value="ADD"></p>
         </form>
 
+    </div>
+    <div>
+        <input type="button" value="back" class="btn btn-primary pos" onClick="history.go(-1)" />
     </div>
     }
  

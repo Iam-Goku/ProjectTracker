@@ -1,6 +1,6 @@
 ﻿body {
     margin-bottom: 60px;
-    background: linear-gradient(90deg, rgba(234,233,255,1) 0%, rgb(158 162 242) 35%, rgba(194,245,255,1) 100%);
+    background: linear-gradient(90deg, #edeef8 0%, #fff 35%, #f6f6fa 100%);
 }
 .projectcret {
    align-content:center;
@@ -11,9 +11,9 @@
     height: 600px;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-top: 1px solid rgb(63 114 238 / 0.20);
+    border-left: 1px solid rgb(35 81 154 / 0.20);
+    box-shadow: 5px 5px 30px rgb(46 91 235 / 0.20);
     border-radius: 10px;
 }
 
@@ -23,7 +23,7 @@
         font-weight: bold;
         font-family: "Open Sans", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: #6a75ee;
         text-align: center;
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
@@ -46,24 +46,26 @@
     text-align: center;
 }
 
- input[type=submit] {
+.projectcret input[type=button] {
     margin-top: 15px;
-    margin-left:70px;
-    width: 800px;
+    margin-left: 70px;
+    width: 950px;
     text-align: center;
-    font-size: 14px;
+    /*font-size: 14px;
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
-    padding: 12px 0;
-    color: #fff;
-    background: rgba(255,255,255,0.05);
+    padding: 12px 0;*/
+    color: #edeef8;
+    background-color:#585cfa;
+ 
+    /*background: rgb(15 106 232 / 0.05);
     backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-top: 1px solid rgb(19 42 221 / 0.20);
+    border-left: 1px solid rgb(16 54 238 / 0.20);
+    box-shadow: 5px 5px 30px rgb(7 35 200 / 0.20);
     text-transform: uppercase;
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
 }
 
 .profile {
@@ -102,13 +104,13 @@
 
     .profilebtn {
         margin-top: 15px;
-        width: 200px;
+        width: 100px;
         text-align: center;
         font-size: 14px;
         font-family: "Open Sans", sans-serif;
         font-weight: bold;
         padding: 12px 0;
-        color: #fff;
+        color: #3350de;
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255,255,255,0.2);
@@ -117,28 +119,32 @@
         text-transform: uppercase;
         border: none;
         margin-bottom: 20px;
+        border-radius:50px;
     }
-
+        .profilebtn:hover{
+            background-color:#8793ef;
+            transition:0.5s;
+        }
 .popup {
-    position: relative;
-    margin: 10px auto;
-    width: 300px;
-    height: 350px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    position: center;
-}
+        position: relative;
+        margin: 10px auto;
+        width: 300px;
+        height: 380px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        position: center;
+        }
     .popup h1 {
         line-height: 55px;
         font-size: 24px;
         font-weight: bold;
         font-family: "Open Sans", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: #6a75ee;
         text-align: center;
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
@@ -158,18 +164,44 @@
         font-family: "Open Sans", sans-serif;
         font-weight: bold;
         padding: 12px 0;
-        color: #fff;
-        background: rgba(255,255,255,0.05);
+        color: #edeef8;
+        background-color: #585cfa;
+
+    /*    background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255,255,255,0.2);
         border-left: 1px solid rgba(255,255,255,0.2);
         box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-        text-transform: uppercase;
+        text-transform: uppercase;*/
         border: none;
         margin-bottom: 20px;
     }
+
+.backbtn input[type=button] {
+    margin-top: -45px;
+    margin-left: 0;
+    width: 100px;
+    text-align: center;
+    font-size: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    padding: 12px 0;
+    color: #fff;
+    background-color: rgb(134 199 215);
+    border-radius:1px;
+    /*    background: rgb(29 58 232 / 0.05);
+*/ /*backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;*/
+    border: none;
+}
+
+
+
 .txt {
-    width:200px;
+    width: 200px;
     margin-left: 50px;
     border-style: solid;
     border-width: 1px;
@@ -194,14 +226,22 @@
 #btnupload{
     display:none;
 }
+#btnsub {
+    display: none;
+    visibility: hidden;
+}
+#btnfile {
+    display: none;
+    visibility: hidden;
+}
 
 .upload {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-    display:block;
+    display: block;
 }
-input[type=file] {
+/*input[type=file] {
     width: 300px;
     text-align: center;
     font-size: 14px;
@@ -216,4 +256,275 @@ input[type=file] {
     box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
     text-transform: uppercase;
     border: none;
+}*/
+
+.projectedit {
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    width: 1100px;
+    height: 600px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(63 114 238 / 0.20);
+    border-left: 1px solid rgb(35 81 154 / 0.20);
+    box-shadow: 5px 5px 30px rgb(46 91 235 / 0.20);
+    border-radius: 10px;
+}
+
+    .projectedit h1 {
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #6a75ee;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .projectedit .flex {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-between;
+        margin: 10px;
+    }
+    .projectedit input[type=submit], .projectedit input[type=button] {
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 200px;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        padding: 12px 0;
+        color: #fff;
+        color: #edeef8;
+        background-color: #585cfa;
+        /*  background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        text-transform: uppercase;
+        border: none;
+        margin-bottom: 20px;*/
+    }
+.btndelte {
+    margin-top: 10px;
+    margin-left: 70px;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding: 12px 0;
+    color: #edeef8;
+    background-color: #585cfa;
+
+/*    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 20px;*/
+}
+
+.btnnotedelte {
+    margin-top: 60px;
+    margin-left: 50px;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding: 12px 0;
+    color: #edeef8;
+    background-color: #585cfa;
+
+   /* background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 20px;*/
+}
+
+
+
+input[type="file"] {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    font-size: 17px;
+    color: #6a75ee;
+}
+
+.Customercrt {
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    margin: 60px;
+    width: 900px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(63 114 238 / 0.20);
+    border-left: 1px solid rgb(35 81 154 / 0.20);
+    box-shadow: 5px 5px 30px rgb(46 91 235 / 0.20);
+    border-radius: 10px;
+}
+
+    .Customercrt h1 {
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #6a75ee;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .Customercrt .flex {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .Customercrt input[type=submit] {
+        position: absolute;
+        right: 8px;
+        bottom:20px;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 875px;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        padding: 12px 0;
+        color: #fff;
+        color: #edeef8;
+        background-color: #585cfa;
+    }
+
+
+.CustomerEdit {
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    margin: 70px;
+    width: 900px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(63 114 238 / 0.20);
+    border-left: 1px solid rgb(35 81 154 / 0.20);
+    box-shadow: 5px 5px 30px rgb(46 91 235 / 0.20);
+    border-radius: 10px;
+}
+
+    .CustomerEdit h1 {
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #6a75ee;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .CustomerEdit .flex {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .CustomerEdit input[type=submit] {
+        position: absolute;
+        right: 8px;
+        bottom: 20px;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: 875px;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        padding: 12px 0;
+        color: #fff;
+        color: #edeef8;
+        background-color: #585cfa;
+    }
+
+
+.drop{
+    position:absolute;
+    left:10px;
+    top:34px;
+    border-color:black;
+
+}
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}
+
+.custpos{
+    position:absolute;
+    top:80%;
+    left:8%;
+}
+.projback .projectpos {
+    position: fixed;
+    top: 90%;
+    left: 1.5%;
 }

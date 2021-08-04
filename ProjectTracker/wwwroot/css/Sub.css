@@ -1,0 +1,19 @@
+﻿body {
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, #fff 0%, #fff 35%, #fff 100%);
+}
+
+input[type=submit] {
+    margin-top: 60px;
+    margin-left: 10px;
+    width: 90px;
+    height:40px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    padding: 12px 0;
+    color: #edeef8;
+    background-color: #585cfa;
+    border-radius:50px;
+}

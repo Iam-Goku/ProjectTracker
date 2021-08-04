@@ -8,21 +8,36 @@
 <p>
     <a asp-action="Create">Create New Project</a>
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find Projects By Name  @Html.TextBox("SearchString")
+        <input type="submit" value="search" class="btn btn-primary" />
+
+        <a asp-action="ProjectList">Get All Projects</a>
+    </p>
+}
+
+<form method="get" asp-action="ProjectList">
+</form>
 <div style="overflow-x:auto;">
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Type)
+                    @*@Html.DisplayNameFor(model => model.TypeID)*@
+                    Type Name
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.SDFRNo)
+                    </th>*@
+                <th>
+                    CustomerName
+                    @*@Html.DisplayNameFor(model => model.CustomerID)*@
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SDFRNo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CustomerID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductID)
+                    ProductName
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.ProjectName)
@@ -67,6 +82,9 @@
                     @Html.DisplayNameFor(model => model.POReceivedYN)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.InvoiceYN)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.POReceivedDate)
                 </th>
                 <th>
@@ -90,9 +108,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.ProjectStatus)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NoteID)
-                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.NoteID)
+                    </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Comments)
                 </th>
@@ -105,11 +123,11 @@
             {
                 <tr ondblclick="goToEdit(@item.ProjectID)">
                     <td>
-                        @Html.DisplayFor(modelItem => item.Type)
+                        @Html.DisplayFor(modelItem => item.Types.Type)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SDFRNo)
-                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.SDFRNo)
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Customers.CustomerName)
                     </td>
@@ -159,6 +177,9 @@
                         @Html.DisplayFor(modelItem => item.POReceivedYN)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.InvoiceYN)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.POReceivedDate)
                     </td>
                     <td>
@@ -182,19 +203,19 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.ProjectStatus)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NoteID)
-                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.NoteID)
+                        </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.Comments)
                     </td>
                     @*<td>
-                    @Html.DisplayFor(modelItem => item.Password)
-                </td>*@
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>*@
                     <td>
                         @*<a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>*@
+                            <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>*@
 
 
                         <script>
@@ -205,9 +226,9 @@
 
                         </script>
 
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-sm" })
-                        @Html.ActionLink("Details", "Details", new { id = item.ProjectID }, new { @class = "btn btn-success btn-sm" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID }, new { @class = "btn btn-danger btn-sm" })
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }, new { @class = "btn btn-primary btn-sm" })
+                            @Html.ActionLink("Details", "Details", new { id = item.ProjectID }, new { @class = "btn btn-success btn-sm" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID }, new { @class = "btn btn-danger btn-sm" })*@
 
 
 

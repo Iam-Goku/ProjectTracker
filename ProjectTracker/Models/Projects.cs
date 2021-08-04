@@ -10,21 +10,11 @@ namespace ProjectTracker.Models
     [Table("Project")]
     public class Projects
     {
-        // [StringLength(4)]
-        //public Project()
-        //{
-        //  //  this.Customers = new List<Customer>();
-        //    this.Employees = new List<Employee>();
-        //    this.Products = new List<Product>();
-        //}
-
-
-
         // [Key]
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectID { get; set; }
-        public int Type { get; set; }
-        [ForeignKey("Type")]
+        public int TypeID { get; set; }
+        [ForeignKey("TypeID")]
         public Typeclass Types { get; set; }
         public string SDFRNo { get; set; } 
         public int CustomerID { get; set; }
@@ -80,9 +70,9 @@ namespace ProjectTracker.Models
         //[ForeignKey("ProjectManagerID"), InverseProperty("EmployeeID")]
        // public Employees Manager { get; set; }
         public string ProjectStatus { get; set; }
-        public int NoteID { get; set; }
-        [ForeignKey("NoteID")]
-        public Note notes { get; set; }
+       // public int NoteID { get; set; }
+        //[ForeignKey("NoteID")]
+        //public Note notes { get; set; }
         public string Comments { get; set; }
 
 
@@ -98,6 +88,14 @@ namespace ProjectTracker.Models
         public string DeveloperName { get; set; }
         [NotMapped]
         public string ProjectManagerName { get; set; }
+      
+        [NotMapped]
+        public string Notecreate { get; set; }
+
+        [NotMapped]
+        public string Fileupload { get; set; }
+
+
 
 
 

@@ -1,8 +1,8 @@
 ﻿body {
     font: 13px/20px "Open Sans", Tahoma, Verdana, sans-serif;
     color: #a7a599;
-    background-image:url('../../Images/PTLogin.jpg');
-    background-size: cover;
+/*  background-image:url('../../Images/PTLogin.jpg');
+*/    background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
 }
@@ -26,7 +26,7 @@
         font-weight: bold;
         font-family: "Open Sans", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: #6a75ee;
         text-align: center;
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
@@ -82,13 +82,13 @@
 }
 
 ::-webkit-input-placeholder {
-    color: #fff;
+    color: rgb(128 128 128);
     align-content:center;
     font-family: "Open Sans";
 }
 
 
-.login input[type=text], input[type=password]{
+.login input[type=text] {
     font-family: "Open Sans", Calibri, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -102,7 +102,25 @@
     border-top: 1px solid rgba(255,255,255,0.2);
     border-left: 1px solid rgba(255,255,255,0.2);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    color: rgb(255, 255, 255);
+    color: rgb(0 0 0);
+    transition: color 0.3s ease-out;
+}
+
+.login input[type=password] {
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px 10px 55px;
+    position: relative;
+    width: 250px;
+    height: 25px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    color: rgb(0 0 0);
     transition: color 0.3s ease-out;
 }
 
@@ -110,7 +128,7 @@ input[type=text] {
     margin-bottom: 15px;
 }
 
- input[type=submit] {
+input[type=submit] {
     margin-top: 15px;
     width: 270px;
     text-align: center;
@@ -118,13 +136,14 @@ input[type=text] {
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     padding: 12px 0;
-    color: #fff;
-    background: rgba(255,255,255,0.05);
+    color: #edeef8;
+    background-color: #585cfa;
+   /* background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255,255,255,0.2);
     border-left: 1px solid rgba(255,255,255,0.2);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    text-transform: uppercase;
+    text-transform: uppercase;*/
     border: none;
     margin-bottom: 20px;
 }
@@ -142,23 +161,23 @@ input[type=text] {
     border-radius: 10px;
 }
 
-.Signup h1 {
-    line-height: 55px;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    margin-top: 0px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
+    .Signup h1 {
+        line-height: 55px;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Open Sans", sans-serif;
+        text-transform: uppercase;
+        color: #6a75ee;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
 
 .Signup .form {
     width: 100%;
@@ -179,51 +198,73 @@ input[type=text] {
     margin-top: 30px;
 }
 
-::-webkit-input-placeholder {
-    color: #fff;
+/*::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.2);
     align-content: center;
     font-family: "Open Sans";
-}
+}*/
 
 
-.Signup input[type=text], input[type=password], input[type=email] {
-    font-family: "Open Sans", Calibri, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px 15px 10px 55px;
-    position: relative;
-    width: 250px;
-    height: 24px;
-    border: none;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255,255,255,0.2);
-    border-left: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    color: rgb(255, 255, 255);
-    transition: color 0.3s ease-out;
-}
+    .Signup input[type=text], .Signup input[type=password], .Signup input[type=email] {
+        font-family: "Open Sans", Calibri, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 10px 15px 10px 55px;
+        position: relative;
+        width: 250px;
+        height: 24px;
+        border: none;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        color: rgb(128 128 128);
+        transition: color 0.3s ease-out;
+    }
 
 .Signup input[type=text] {
     margin-bottom: 15px;
 }
 
-.Signup input[type=submit] {
-    margin-top: 15px;
-    width: 270px;
-    text-align: center;
+    .Signup input[type=submit] {
+        margin-top: 15px;
+        width: 270px;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        padding: 12px 0;
+        color: #edeef8;
+        background-color: #585cfa;
+     /*   background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-left: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        text-transform: uppercase;*/
+        border: none;
+        margin-bottom: 20px;
+    }
+.dropdownlist {
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    padding: 12px 0;
-    color: #fff;
+    font-weight: 400;
+    position: relative;
+    width: 250px;
+    height: 28px;
+    border: none;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255,255,255,0.2);
     border-left: 1px solid rgba(255,255,255,0.2);
     box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
-    text-transform: uppercase;
-    border: none;
-    margin-bottom: 20px;
+    color: rgb(128 128 128);
+    transition: color 0.3s ease-out;
 }
 
+.pos{
+    position:absolute;
+    top:83%;
+    left:30%;;
+}

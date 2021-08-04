@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -61,11 +62,10 @@ namespace ProjectTracker.Controllers
             return View();
         }
 
-
         public IActionResult SignUp()
         {
-            return View();
-
+         ViewBag.PositionID = new SelectList(_context.Position, "PositionID", "Position");
+          return View();
         }
         [HttpPost]
         public async Task<IActionResult> SignUp(Employees ec)
@@ -74,16 +74,18 @@ namespace ProjectTracker.Controllers
             {
                 _context.Add(ec);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Login");
+                return RedirectToAction("AllEmployeeDetails");
             }
             return View(ec);
         }
 
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.PositionID = new SelectList(_context.Position, "PositionID", "Position");
+
             if (id == null)
             {
-                return RedirectToAction("EmployeeDetails");
+                return RedirectToAction("AllEmployeeDetails");
 
             }
 
@@ -99,7 +101,7 @@ namespace ProjectTracker.Controllers
             {
                 _context.Update(ec);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("EmployeeDetails");
+                return RedirectToAction("AllEmployeeDetails");
 
             }
             return View(ec);
@@ -109,7 +111,7 @@ namespace ProjectTracker.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("EmployeeDetails");
+                return RedirectToAction("AllEmployeeDetails");
 
             }
 
@@ -124,7 +126,7 @@ namespace ProjectTracker.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("EmployeeDetails");
+                return RedirectToAction("AllEmployeeDetails");
 
             }
 
@@ -144,28 +146,34 @@ namespace ProjectTracker.Controllers
             _context.Employee.Remove(getempdetails);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("EmployeeDetails");
+            return RedirectToAction("AllEmployeeDetails");
 
         }
 
   
-            public async Task<IActionResult> EmployeeDetails(Employees emp)
-        {
-            // int EmployeeID = Convert.ToInt32(TempData["EmployeeID"]);
+        //    public async Task<IActionResult> EmployeeDetails(Employees emp)
+        //{
+        //    // int EmployeeID = Convert.ToInt32(TempData["EmployeeID"]);
 
-            int EmployeeID =Convert.ToInt32(HttpContext.Session.GetString("EmployeeID"));
+        //    int EmployeeID =Convert.ToInt32(HttpContext.Session.GetString("EmployeeID"));
 
-            if (EmployeeID >= 1)
-            {            
-                var myUser = _context.Employee
-                             .Where(e => e.EmployeeID == EmployeeID).ToList();
+        //    if (EmployeeID >= 1)
+        //    {            
+        //        var myUser = _context.Employee
+        //                     .Where(e => e.EmployeeID == EmployeeID).ToList();
                            
-                return View(myUser);
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+        //        return View(myUser);
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Login");
+        //    }
+        //}
+
+        public IActionResult AllEmployeeDetails()
+        {
+            var displaydata = _context.Employee.Include(po=>po.postion).ToList();
+            return View(displaydata);
         }
     }
 }
